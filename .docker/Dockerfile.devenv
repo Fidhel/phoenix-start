@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM alpine:3.4
+FROM ubuntu:18.04
 
 ENV ASDF_VERSION "v0.1.0"
 ENV ERLANG_VERSION "19.1"
