@@ -1,17 +1,6 @@
 # syntax=docker/dockerfile:1
-FROM elixir:latest
+FROM ubuntu:18.04
 
-EXPOSE 4000
-
-RUN apt-get update && \
-    apt-get install -y postgresql-client && \
-    apt-get install -y inotify-tools && \
-    apt-get install -y nodejs && \
-    curl -L https://npmjs.org/install.sh | sh && \
-    mix local.hex --force && \
-    mix archive.install hex phx_new --force && \
-    mix local.rebar --force
-
-ENV APP_HOME /app
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
+ENV ASDF_VERSION "v0.1.0"
+ENV ERLANG_VERSION "19.1"
+ENV ELIXIR_VERSION "1.4.0"
